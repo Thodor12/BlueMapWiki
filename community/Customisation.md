@@ -100,10 +100,14 @@ The options you can safely change are the `description`, `theme-color`, `og:site
 {: .info }
 
 ## Website favicon
-A favicon is the icon you'll see on the tab in your browser, and in the favourites bar if you've favourited the website.  
+A favicon is the icon you'll see on the tab in your browser, and in the favourites bar if you've favourited the website.
+
 There are two ways to change BlueMap's favicon:
-1. Replace the favicon image `./bluemap/web/assets/favicon-8768b872.png`
-2. Copy a new image file to the BlueMap webroot (or `assets` directory) and edit the `<link rel="icon" href="./assets/favicon-8768b872.png">` in `index.html` to refer to your new image instead.
+- Replace the favicon image `./bluemap/web/assets/favicon-8768b872.png`
+
+OR
+
+- Copy a new image file to the BlueMap webroot (or `assets` directory) and edit the `<link rel="icon" href="./assets/favicon-8768b872.png">` in `index.html` to refer to your new image instead.
 
 ## Website title
 The title is the text that is on the tab in your browser.  
