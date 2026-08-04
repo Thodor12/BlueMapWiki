@@ -37,6 +37,14 @@ Zero or a negative value means the amount of available processor-cores subtracte
 
 _Default varies per machine_
 
+## `render-thread-priority`
+This changes the priority that BlueMap's render-threads will get.
+How the thread-priority affects actual performance depends on your JVM.
+
+The priority must be a value between 1 and 10.
+
+_Default is Javas default priority (`5`)_
+
 ## `scan-for-mod-resources`
 Controls whether BlueMap should try to find and load mod-resources and datapacks from the server/world-directories.
 
