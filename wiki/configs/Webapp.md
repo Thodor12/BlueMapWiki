@@ -85,6 +85,13 @@ Here you can specify an alternative base url from where all **live data** is loa
 
 _Default is_ `"maps"`
 
+## `client-decompression`
+This will configure the webapp to request the map-tiles compressed and decompress them manually.
+
+Enable this only if you intend to host the webapp statically, with an external webserver without additional configuration.
+
+_Default is_ `false`
+
 ## `scripts`
 Here you can add URLs to custom **scripts** (**js**) so they will be loaded by the webapp
 

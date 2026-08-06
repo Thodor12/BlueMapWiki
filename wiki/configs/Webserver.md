@@ -32,6 +32,11 @@ The port that the webserver listens on.
 
 _Default is_ `8100`
 
+## `sse-enabled`
+Whether to use Server-Sent Events (SSE) for pushing tile and marker-updates to the connected clients.
+
+_Default is_ `true`
+
 ## `log`
 Config-section for webserver-activity logging
 
