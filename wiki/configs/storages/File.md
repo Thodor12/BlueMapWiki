@@ -35,3 +35,19 @@ Available compression-types are:
 - `none`
 
 _Default is_ `gzip`
+
+## Hidden Configs
+
+> **Info:**  
+> These config options are not included in bluemaps default configuration template.  
+> This is done to discourage users from changing them, as they rarely need to be changed and are for advanced users only.  
+> Change them at your own risk!
+{: .info }
+
+## `atomic`
+Whether to use atomic file operations and `.filepart` files when saving map data.  
+This helps making sure that there is never incomplete files written in the map-storage.  
+Disabling this could help if your map-storage is some remote file-system that doesn't support atomic operations and you
+want to minimize file-operations.
+
+_Default is_ `true`

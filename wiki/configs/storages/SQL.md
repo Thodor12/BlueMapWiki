@@ -30,6 +30,14 @@ But the format for this url is _usually_ something like: `jdbc:[driver]://[host]
 You can set any additional (JDBC-Driver-specific) properties here  
 Usually that's your db-user and password
 
+### Example:
+```hocon
+connection-properties: {
+  user: "myUser",
+  password: "myPassword"
+}
+```
+
 ## `max-connections`
 The maximum number of connections to the database that are allowed to be open at the same time.
 A negative number means unlimited.

@@ -216,3 +216,61 @@ If you need dynamic markers, you can use any plugin or mod that integrates with 
 [Here is a list.](/community/3rdPartySupport.md)
 
 Please check out [this wiki page](/wiki/customization/Markers.md) for information on how to configure this.
+
+## Hidden Configs
+
+> **Info:**  
+> These config options are not included in bluemaps default configuration template.  
+> This is done to discourage users from changing them, as they rarely need to be changed and are for advanced users only.  
+> Change them at your own risk!
+{: .info }
+
+## `dimension-type`
+The dimension-type of the world. Can be "minecraft:overworld", "minecraft:the_nether", "minecraft:the_end", "minecraft:overworld_caves",
+or any dimension-type key introduced by a datapack.
+
+Setting this value is usually not needed! In most cases BlueMap can detect this value automatically from the world-files.
+
+_Default is the detected dimension-type_
+
+## `min-inhabited-time-radius`
+The radius in chunks that bluemap will look around the current chunk to search for chunks matching the minimum inhabited time requirement.
+(See: `min-inhabited-time`). Only if no chunk with the matching requirement is found within this radius, the current map-tile will not be rendered.
+
+This can be used to render a larger area around inhabited chunks. But the setting should be used very carefully as the performance-impact
+increases exponentially with the set radius. (BlueMap needs to load and check all chunks within the radius each time before rendering a tile!)
+
+_Default is_ `0`
+
+## `check-for-removed-regions`
+Whether bluemap should check for region-files that have been removed and unrender/delete these regions from the map.
+
+_Default is_ `true`
+
+## `hires-tile-size`
+The x/z size of the hires-tiles (3d models) in blocks.
+
+Changing this will require a full re-render of the map.
+
+_Default is_ `32`
+
+## `lowres-tile-size`
+The x/z size of the lowres-tiles (2d images) in blocks/pixels.
+
+Changing this will require a full re-render of the map.
+
+_Default is_ `500`
+
+## `lod-count`
+The number of levels of detail (LOD) layers (lowres) that BlueMap will generate for the map.
+
+Changing this will require a full re-render of the map.
+
+_Default is_ `3`
+
+## `lod-factor`
+The factor by which the x/z size (blocks) of each LOD layer increases compared to the previous one. (The size in pixels remains constant)
+
+Changing this will require a full re-render of the map.
+
+_Default is_ `5`

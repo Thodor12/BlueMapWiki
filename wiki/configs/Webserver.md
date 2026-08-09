@@ -72,3 +72,22 @@ Possible Arguments:
 _Default is_ `"%1$s \"%3$s %4$s %5$s\" %6$s %7$s"`
 
 </section>
+
+## Hidden Configs
+
+> **Info:**  
+> These config options are not included in bluemaps default configuration template.  
+> This is done to discourage users from changing them, as they rarely need to be changed and are for advanced users only.  
+> Change them at your own risk!
+{: .info }
+
+## `ip`
+The IP address that the webserver will bind to.
+
+Usually bluemap binds to all available network-interfaces, but you can use this setting to restrict bluemaps webserver
+to bind to only one ip. For example if you want to only bind it to localhost and disallow external access you can set this to
+```hocon
+ip: "127.0.0.1"
+```
+
+_Default is_ `0.0.0.0` (all available interfaces)
