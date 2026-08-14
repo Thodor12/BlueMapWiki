@@ -17,23 +17,35 @@ However, BlueMap directly reads chunk data from disk, instead of via the server.
 This is why it can be useful to run a tool to fix the data in these chunks first before we start rendering the map.  
 We recommend using Chunky since it is supported on most platforms that BlueMap runs on, but for Bukkit-based servers Light Cleaner is also an option.
 
-## Chunky Instructions
+## Chunky Instructions 
 First make sure you have Chunky installed. You can download it at [modrinth.com/plugin/chunky](https://modrinth.com/plugin/chunky)  
 Now to fix lighting issues in the world, we will want to force re-loading of all the chunks in the world. This can be done using the steps outlined below:
+
+### You have a pre-generated world and know the size
 1. Open the config file for Chunky: `Chunky/config.yml`
-2. Set the option `force-load-existing-chunks` to `true`, and save the file
-3. Restart the server, or run `chunky reload` to reload the configuration file on the server
-4. Set the world using `/chunky world <world-name>`
-5. Set the radius using `/chunky radius 100000` (or large enough to cover the entire world)
-6. Set the world pattern using `/chunky pattern world` which will specify re-loading only existing chunks in the world
-7. Run `/chunky start` to start the loading process. This may take a long time, so patience is required.
-8. Restart the server when this completes. This is important to make sure all fixed chunks have been saved properly.
-9. Run `/bluemap purge <map-id>` to re-render your world, this time hopefully with fixed lighting!
+1. Set the option `force-load-existing-chunks` to `true`, and save the file
+1. Restart the server, or run `chunky reload` to reload the configuration file on the server
+1. Set the world using `/chunky world <world-name>`
+1. Set the area of your world that you want to fix/generate (see the [chunky-wiki](https://github.com/pop4959/Chunky/wiki/Commands#selection) for how to do that)
+1. Run `/chunky start` to start the loading process. This may take a long time, so patience is required.
+1. Restart the server when this completes. This is important to make sure all fixed chunks have been saved properly.
+1. Run `/bluemap purge <map-id>` to re-render your world, this time hopefully with fixed lighting!
+
+### You don't have a pre-generated world
+1. Open the config file for Chunky: `Chunky/config.yml`
+1. Set the option `force-load-existing-chunks` to `true`, and save the file
+1. Restart the server, or run `chunky reload` to reload the configuration file on the server
+1. Set the world using `/chunky world <world-name>`
+1. Set the radius using `/chunky radius 100000` (or large enough to cover the entire world)
+1. Set the world pattern using `/chunky pattern world` which will specify re-loading only existing chunks in the world
+1. Run `/chunky start` to start the loading process. This may take a long time, so patience is required.
+1. Restart the server when this completes. This is important to make sure all fixed chunks have been saved properly.
+1. Run `/bluemap purge <map-id>` to re-render your world, this time hopefully with fixed lighting!
 
 ## Light Cleaner Instructions
 First make sure you have Light Cleaner installed. You can download it at [spigotmc.org/resources/light-cleaner.42469/](https://www.spigotmc.org/resources/light-cleaner.42469/)  
 Now to fix lighting issues in the world, we will want to run the light cleaner:
 1. Run `/cleanlight world earth` (or the name of the world if not named "earth")
-2. Check `/cleanlight status` for progress. This may take a long time so patience is required.
-3. Restart the server when this completes. This is important to make sure all fixed chunks have been saved properly.
-4. Run `/bluemap purge <map-id>` to re-render your world, this time hopefully with fixed lighting!
+1. Check `/cleanlight status` for progress. This may take a long time so patience is required.
+1. Restart the server when this completes. This is important to make sure all fixed chunks have been saved properly.
+1. Run `/bluemap purge <map-id>` to re-render your world, this time hopefully with fixed lighting!
